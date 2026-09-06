@@ -122,7 +122,7 @@ and skills in their resume — not generic questions that could apply to anyone.
 
 RESUME:{resume_text}
 
-{f"ROLE BEING INTERVIEWED FOR:{jd_text}n"}
+
 
 Generate interview questions across the following categories:
 

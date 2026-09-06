@@ -151,7 +151,7 @@ Generate interview questions across the following categories:
 {f'''5. ROLE-FIT (2-3 questions)
    - Directly assess alignment between resume experience and the target job description.
    - Focus especially on any gaps identified between the two.
-''' if jd_text else ""}
+''' }
 
 For each question, briefly note WHY you're asking it (what it's meant to reveal).
 

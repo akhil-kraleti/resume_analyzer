@@ -9,20 +9,15 @@ genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 from resume_parser import extract_text
 from analyzer import match_resume
 from similarity import calculate_similarity
-from skills import extract_skills
+
 from analyzer import generate_questions
 
 
 
 st.title("AI Resume Analyzer")
 
-uploaded_file = st.file_uploader(
-    "Upload Resume",
-    type=["pdf"]
-)
-job_description = st.text_area(
-    "Paste Job Description"
-)
+uploaded_file = st.file_uploader( "Upload Resume", type=["pdf"])
+job_description = st.text_area( "Paste Job Description")
 
 if uploaded_file:
 
@@ -35,14 +30,8 @@ if uploaded_file:
         similarity_score = calculate_similarity(text,job_description)
         st.subheader("NLP Similarity Score")
         st.write(f"{similarity_score}%")
-        resume_skills = extract_skills(text)
-        jd_skills = extract_skills(job_description)
-        missing_skills = []
-        for skill in jd_skills:
-           if skill not in resume_skills:
-               missing_skills.append(skill)
-        st.subheader("Missing Skills")
-        st.write(missing_skills)
+       
+       
         st.markdown(result)
         questions = generate_questions(text)
         st.subheader("Interview Questions")
